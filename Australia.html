@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body, .jumbotron { padding: 30px; }
+    body {
+        background-image: url('/Users/kelly/downloads/luke-flynt-9jErXqFwAYs-unsplash.jpg');
+        background-size: cover;   
+        background-repeat:   no-repeat;             /* optional, center the image */
+    }
+
+    #wrapper { max-width: 600px;
+  margin: auto; }
+
+button {
+	background-color: #D14836;
+	background-image: -webkit-linear-gradient(top,#dd4b39,#d14836);
+	background-image: -moz-linear-gradient(top,#dd4b39,#d14836);
+	background-image: -ms-linear-gradient(top,#dd4b39,#d14836);
+	background-image: -o-linear-gradient(top,#dd4b39,#d14836);
+	background-image: linear-gradient(top,#dd4b39,#d14836);
+	
+	border: 1px solid transparent;
+	color: white;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+}
+
+button:hover {
+	background-color: #C53727;
+	background-image: -webkit-linear-gradient(top,#dd4b39,#c53727);
+	background-image: -moz-linear-gradient(top,#dd4b39,#c53727);
+	background-image: -ms-linear-gradient(top,#dd4b39,#c53727);
+	background-image: -o-linear-gradient(top,#dd4b39,#c53727);
+	background-image: linear-gradient(top,#dd4b39,#c53727);	
+}
+
+h2 {
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+h2.smokey {
+  width: 150px;
+  height: auto;
+}
+
+img {
+  border-radius: 8px;
+}
+
+#aus {
+  text-align: end;
+}
+
+text {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#phone {
+  text-align: center;
+}
+
+p.locat {
+  font-family: "Open sans", sans-serif;
+  font-size: 8px;
+  color: white;
+  line-height:0px;
+  text-align: center;
+}
+
+p {
+  font-family: "Open sans", sans-serif;
+  font-size: 20px;
+  color: white;
+  line-height:0px;
+  text-align: center;
+}
+
+p.locat {
+  font-family: "Open sans", sans-serif;
+  font-size: 8px;
+  font-weight: bolder;
+  color: white;
+  line-height:0px;
+  text-align: center;
+}
+
+
+
+text:focus::-webkit-input-placeholder { /* WebKit browsers */
+  color: white;
+}
+text:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: white;
+}
+text:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: white;
+}
+text:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: white;
+}
+
+
+
+</style>
+</head>
+<body>
+  <img src="https://ci3.googleusercontent.com/proxy/V50vz-hYOg9O5y82rnyQztkLk2DeyMbPZa3fJju8GB2V-acdFY0Dkxepa4Nsyqn5eCI9cGqRDVYGg62Z-pKY23z2uvCdFN--FVepU4gU8HneLQlu0BTe0YRuCsPxOpyOD6XGzTFzPNjMZVtPBtVJnxqK5sBP7_V0z-Y=s0-d-e1-ft#https://gallery.mailchimp.com/7212aad8234656089340f62b8/images/0635f0d4-3742-45e6-9875-7e2f67a801db.png" alt="Smiley face" alt="Smokey" width="120" >
+  <img src= "https://cdn.discordapp.com/attachments/666749378349891637/670882392596283402/TAMU_Logo.png" width="50" >
+  <div id="wrapper">
+
+    <h2> 
+      <img src="https://www.atticpaper.com/prodimages/life1971/forestfires.jpg" width="200">
+
+      
+      
+    </h2> 
+    <p id="main"> 
+      Your automated instant Forest Fire warning system. 
+    </p> 
+    
+
+    <div id="phone">
+      <p id="locat"> 
+        Receive an instant update based on your current location.
+      </p> 
+      
+      <div id="nudge"></div>
+    <input type="text"
+             id="myText"
+             value="Enter a Phone Number"> 
+      
+    
+        <button id = "button" onclick="myFunction()"> Receive Notification </button> 
+    </div>
+  </div>
+
+  <span id="startLat"></span>
+  <span id="startLon"></span>
+      <p id="demo"></p> 
+      
+
+
+      <div id="aus"> <img src="https://cdn3.iconfinder.com/data/icons/world-flags-circular-1/512/25-Australia_Australian_AUS_cross_kangaroo_jack_union_stars_country_flag_-512.png" width="60"></div>
+
+      <html>
+        <head>
+          <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap">
+        </head>
+      </html>
+
+
+    
+      <script> 
+          // Here the value is stored in new variable x  
+
+          var button = document.getElementById('button');
+          var nudge = document.getElementById("nudge");
+          var latitude = document.getElementById('startLat');
+          var longitude = document.getElementById('startLon');
+
+          button.onclick = function() {
+
+            var x =  document.getElementById("myText").value; 
+            if (x.toString().length > 12 || x.toString().length < 8) {
+              document.getElementById("demo").innerHTML = "Incorrect phone number. Try again.";
+              return;
+            }
+            
+            var y = "A notification is being sent to: ";
+
+            
+
+              document.getElementById("demo").innerHTML = y + x; 
+              console.log(x);
+
+          var startPos;
+          var showNudgeBanner = function() { nudge.style.display = "block"; };
+          var hideNudgeBanner = function() { nudge.style.display = "none"; };
+          var nudgeTimeoutId = setTimeout(showNudgeBanner, 5000);
+
+          var geoSuccess = function(position) {
+            hideNudgeBanner(); clearTimeout(nudgeTimeoutId); startPos = position;
+            latitude.innerHTML = startPos.coords.latitude;
+            longitude.innerHTML = startPos.coords.longitude;
+            console.log(latitude);
+            console.log(longitude);
+          };
+
+          var geoFail = function(error) {
+            switch (error.code) { case error.TIMEOUT: showNudgeBanner(); break; } };
+            navigator.geolocation.getCurrentPosition(geoSuccess, geoFail);
+
+            var entry = {
+              lat: latitude.value,
+              long: longitude.value,
+              phone: x.value
+            };
+
+            fetch(`${window.origin}/guestbook/create-entry)`, {
+              method: "POST",
+              credentials: "include",
+              body: JSON.stringify(entry),
+              cache: "no-cache",
+              headers: new Headers({
+                "content-type": "application/json"
+              })
+            })
+
+            setTimeout(() => {  window.open("/Users/Kelly/Documents/JavaScript/bushfire.html"); }, 5000);
+            
+        };
+    
+          
+      </script> 
+</div>
+
+</body>
+</html>
