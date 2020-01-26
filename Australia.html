@@ -8,7 +8,7 @@ body, .jumbotron { padding: 30px; }
     body {
         background-image: url('/Users/kelly/downloads/luke-flynt-9jErXqFwAYs-unsplash.jpg');
         background-size: cover;   
-        background-repeat:   no-repeat;             /* optional, center the image */
+        background-repeat:   repeat;             /* optional, center the image */
     }
 
     #wrapper { max-width: 600px;
@@ -66,14 +66,6 @@ text {
   text-align: center;
 }
 
-p.locat {
-  font-family: "Open sans", sans-serif;
-  font-size: 8px;
-  color: white;
-  line-height:0px;
-  text-align: center;
-}
-
 p {
   font-family: "Open sans", sans-serif;
   font-size: 20px;
@@ -82,10 +74,9 @@ p {
   text-align: center;
 }
 
-p.locat {
+p#locat {
   font-family: "Open sans", sans-serif;
-  font-size: 8px;
-  font-weight: bolder;
+  font-size: 9px;
   color: white;
   line-height:0px;
   text-align: center;
@@ -93,16 +84,16 @@ p.locat {
 
 
 
-text:focus::-webkit-input-placeholder { /* WebKit browsers */
+.nudge:focus::-webkit-input-placeholder { /* WebKit browsers */
   color: white;
 }
-text:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+.nudge:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
   color: white;
 }
-text:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
+.nudge:focus::-moz-placeholder { /* Mozilla Firefox 19+ */
   color: white;
 }
-text:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
+.nudge:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
   color: white;
 }
 
@@ -122,20 +113,20 @@ text:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
       
     </h2> 
     <p id="main"> 
-      Your automated instant Forest Fire warning system. 
+      FOREST FIRE ASSISTANCE SYSTEM
     </p> 
     
 
     <div id="phone">
       <p id="locat"> 
-        Receive an instant update based on your current location.
+        Enter your phone number to receive an instant update based on your current location.
       </p> 
       
-      <div id="nudge"></div>
+      <div id="nudge">
     <input type="text"
              id="myText"
              value="Enter a Phone Number"> 
-      
+            </div>
     
         <button id = "button" onclick="myFunction()"> Receive Notification </button> 
     </div>
@@ -146,15 +137,17 @@ text:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
       <p id="demo"></p> 
       
 
-
-      <div id="aus"> <img src="https://cdn3.iconfinder.com/data/icons/world-flags-circular-1/512/25-Australia_Australian_AUS_cross_kangaroo_jack_union_stars_country_flag_-512.png" width="60"></div>
+      <a href = "https://www.acnc.gov.au/charity">
+      <div id="aus"> <img src="https://cdn3.iconfinder.com/data/icons/world-flags-circular-1/512/25-Australia_Australian_AUS_cross_kangaroo_jack_union_stars_country_flag_-512.png" width="60"></div></a>
 
       <html>
         <head>
+
           <link rel="stylesheet"
                 href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap">
         </head>
       </html>
+      
 
 
     
@@ -214,7 +207,7 @@ text:focus:-ms-input-placeholder { /* Internet Explorer 10+ */
               })
             })
 
-            setTimeout(() => {  window.open("/Users/Kelly/Documents/JavaScript/bushfire.html"); }, 5000);
+            setTimeout(() => {  window.open("https://vcatlett.github.io/bushfires.github.io/index.html"); }, 5000);
             
         };
     
