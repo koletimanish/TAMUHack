@@ -3,6 +3,7 @@
 In an effort to understand the current problem of the Australian bushfires and present a solution, our team created an interactive website to allow users to track nearby fires and get the help they need.
 
 Website Link: https://vcatlett.github.io/bushfires.github.io/
+- www.bushfire.tech
 
 We're working to make it easy to be prepared for the worst. Inspired by the recent of volunteers combatting the Australian bushfires, our website was created to present consolidated, pertinent data for emergency situations. Recent history has seen a shocking rise in cataclysmic events, especially regarding devastating wildfires. Flames have torn through thousands of homes in California, ripped apart the luscious Amazon rainforest, and slaughtered over a billion animals in Australia.
 
